@@ -1,12 +1,12 @@
-@import './utils/breakpoints';
+@import "./utils/breakpoints";
 
-body{
+body {
   background-image: url("/assets/background.png");
   background-position: center;
   background-size: cover;
 }
 
-#mainWrapper{
+#mainWrapper {
   max-width: $tablet;
   margin: 40px auto 80px auto;
 }

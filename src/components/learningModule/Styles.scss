@@ -1,48 +1,63 @@
-@import '../../styles/utils/colors';
-@import '../../styles/utils/mixins';
-@import '../../styles/utils/breakpoints';
+@import "../../styles/utils/colors";
+@import "../../styles/utils/mixins";
+@import "../../styles/utils/breakpoints";
 
 .learningModule {
-    &--header {
-        text-align: center;
-    }
+  &--header {
+    text-align: center;
+  }
 
-    &--title {
-        margin: 25px 10px;
-        color: $morning-sky;
-        font-weight: 600;
-        font-size: 1.5em;
+  &--title {
+    margin: 25px 10px;
+    color: $morning-sky;
+    font-weight: 600;
+    font-size: 1.5em;
+    @media screen and (max-width: $mobile) {
+      text-align: left;
+      padding-left: 5px;
+      margin-bottom: 0px;
     }
+  }
 
-    &--subHeader{
-        @include subheader;
-        min-height: 42px;
+  &--subHeader {
+    @include subheader;
+    min-height: 42px;
+    @media screen and (max-width: $mobile) {
+      display: none;
     }
-  
-    &--answerArea {
-        background-color: white;
-        box-shadow: 0px 0px 20px -15px;
-        padding: 0px 0px 20px 0;
-        border-radius: 10px;
-        display: grid;
-        justify-content: center;
-        @media only screen and (max-width: $tablet) {
-            border-radius: unset;
-        }
+  }
 
+  &--answerArea {
+    background-color: white;
+    box-shadow: 0px 0px 20px -15px;
+    padding: 0px 0px 20px 0;
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
+    @media only screen and (max-width: $tablet) {
+      border-radius: unset;
     }
+    @media screen and (max-width: $mobile) {
+      background-color: unset;
+      box-shadow: unset;
+    }
+  }
 
-    &--selections{ 
-        padding: 30px 0;
-        display: grid;
-        grid-auto-flow: column;
-        grid-gap: 10px;
+  &--selections {
+    padding: 30px 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 10px;
+    @media screen and (max-width: $tablet) {
+      grid-auto-flow: row;
+      grid-template-columns: 50% 50%;
     }
+  }
 
-    &--submitButtonContainer {
-        height: 50px;
-        .submitButton {
-            float: right;
-        }
+  &--submitButtonContainer {
+    height: 50px;
+    .submitButton {
+      float: right;
     }
+  }
 }
